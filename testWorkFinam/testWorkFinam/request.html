@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>1)</h3>
+    <p>
+        SELECT music.name_music, executor.executor_names, music.duration_time, music.date_creation
+FROM music 
+INNER JOIN executor ON music.executor_id = executor.id
+ORDER BY date_creation DESC
+LIMIT 10;
+
+    </p>
+    <h3>2)</h3>
+    <p>
+        SELECT executor.executor_names, count(executor.executor_names) as count_realesed
+FROM music 
+INNER JOIN executor ON music.executor_id = executor.id
+GROUP BY executor.executor_names 
+LIMIT 5;
+
+    </p>
+</body>
+</html>
